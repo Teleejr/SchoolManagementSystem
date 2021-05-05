@@ -5,6 +5,7 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
 
 import javax.persistence.Entity;
+import java.util.List;
 
 @Getter@Setter
 @NoArgsConstructor
@@ -17,6 +18,6 @@ public class Student {
     String sEmail;
     String sName;
     String sPass;
-    //List<> sCourses;
+    List<Course> sCourses;
 
 }
