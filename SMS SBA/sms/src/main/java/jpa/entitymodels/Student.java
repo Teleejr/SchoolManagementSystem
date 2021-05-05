@@ -5,6 +5,8 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
 @Getter@Setter
@@ -14,7 +16,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Student {
-
+    @Id
     String sEmail;
     String sName;
     String sPass;

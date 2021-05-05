@@ -4,7 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Getter@Setter
 @NoArgsConstructor
@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 @Entity
 public class Course {
 
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)@Column(columnDefinition = "INT(11) UNSIGNED")
     int cId;
     String cName;
     String cInstructorName;
