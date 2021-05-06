@@ -4,8 +4,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.List;
 
@@ -16,9 +16,11 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Student {
-    @Id
+    @Id@Column(columnDefinition = "varchar(50)", name = "Email")@NonNull
     String sEmail;
+    @Column(columnDefinition = "varchar(50)", name = "Name")@NonNull
     String sName;
+    @Column(columnDefinition = "varchar(50)", name = "Password")@NonNull
     String sPass;
     List<Course> sCourses;
 

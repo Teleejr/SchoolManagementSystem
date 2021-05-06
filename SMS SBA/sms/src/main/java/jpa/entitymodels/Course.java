@@ -14,8 +14,11 @@ import javax.persistence.*;
 @Entity
 public class Course {
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)@Column(columnDefinition = "INT(11) UNSIGNED")
-    int cId;
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "INT(11) UNSIGNED", name = "ID")@NonNull
+    Integer cId;
+    @Column(columnDefinition = "varchar(50)", name = "Name")@NonNull
     String cName;
+    @Column(columnDefinition = "varchar(50)", name = "Instructor")@NonNull
     String cInstructorName;
 }

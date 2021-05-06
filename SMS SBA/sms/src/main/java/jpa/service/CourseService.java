@@ -1,4 +1,4 @@
-package jpa.services;
+package jpa.service;
 
 import jpa.dao.CourseDAO;
 import jpa.entitymodels.Course;

@@ -1,4 +1,4 @@
-package jpa.services;
+package jpa.service;
 
 import jpa.dao.StudentDAO;
 import jpa.entitymodels.Course;
