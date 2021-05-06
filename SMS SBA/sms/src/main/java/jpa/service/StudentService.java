@@ -7,10 +7,11 @@ import jpa.entitymodels.Student;
 import java.util.List;
 
 public class StudentService implements StudentDAO {
-
+    public static
 
     @Override
     public List<Student> getAllStudents() {
+        //Create entity
         return null;
     }
 

@@ -15,6 +15,9 @@ import jpa.entitymodels.Student;
 import jpa.service.CourseService;
 import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
+import jpa.util.SmsUtil;
+
+import javax.persistence.EntityManagerFactory;
 
 /**1
  * 
@@ -22,6 +25,7 @@ import jpa.service.StudentService;
  *
  */
 public class SMSRunner {
+	public static EntityManagerFactory emf = SmsUtil.getEntityManagerFactory();
 
 	private Scanner sin;
 	private StringBuilder sb;
