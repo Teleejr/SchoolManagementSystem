@@ -11,4 +11,10 @@ public class CourseService implements CourseDAO {
     public List<Course> getAllCourses() {
         return null;
     }
+
+    @Override
+    public Course getCourseById(int cId) {
+        return null;
+    }
+
 }

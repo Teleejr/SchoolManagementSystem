@@ -3,6 +3,7 @@ package jpa.entitymodels;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
+import org.apache.log4j.Logger;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,4 +29,31 @@ public class Student {
     @ToString.Exclude
     List<Course> sCourses;
 
+//    public static Logger getLog() {
+//        return log;
+//    }
+//
+//    public String getSEmail() {
+//        return sEmail;
+//    }
+//
+//    public void setSEmail(String sEmail) {
+//        this.sEmail = sEmail;
+//    }
+//
+//    public String getSName() {
+//        return sName;
+//    }
+//
+//    public void setSName(String sName) {
+//        this.sName = sName;
+//    }
+//
+//    public String getSPass() {
+//        return sPass;
+//    }
+//
+//    public void setSPass(String sPass) {
+//        this.sPass = sPass;
+//    }
 }

@@ -43,6 +43,7 @@ public class SMSRunner {
 
 	/**
 	 * @param args
+	 * main runner
 	 */
 	public static void main(String[] args) {
 
@@ -69,7 +70,7 @@ public class SMSRunner {
 
 	private int menu1() {
 		sb.append("\n1.Student Login\n2. Quit Application\nPlease Enter Selection: ");
-		out.print(sb.toString());
+		out.print(sb); //sb.toString()->sb. In case it doesn't work
 		sb.delete(0, sb.length());
 
 		return sin.nextInt();
@@ -82,13 +83,13 @@ public class SMSRunner {
 		out.print("Enter your password: ");
 		String password = sin.next();
 
-		List<Student> students = studentService.getStudentByEmail(email);
+		List<Student> students = (List<Student>) studentService.getStudentByEmail(email);
 		if (students != null) {
 			currentStudent = students.get(0);
 		}
 
-		if (currentStudent != null & currentStudent.getStudentPassword().equals(password)) {
-			List<Course> courses = studentService.getStudentCourses(email);
+		if (currentStudent != null & currentStudent.getSPass().equals(password)) {
+			List<Course> courses = studentService.getStudentCourse(email);
 			out.println("MyClasses");
 			for (Course course : courses) {
 				out.println(course);
@@ -102,13 +103,13 @@ public class SMSRunner {
 
 	private void registerMenu() {
 		sb.append("\n1.Register a class\n2. Logout\nPlease Enter Selection: ");
-		out.print(sb.toString());
+		out.print(sb); //sb.toString()->sb. In case it doesn't work
 		sb.delete(0, sb.length());
 
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getStudentEmail());
+			List<Course> studentCourses = studentService.getStudentCourse(currentStudent.getSEmail());
 			allCourses.removeAll(studentCourses);
 			out.printf("%5s%15S%15s\n", "ID", "Course", "Instructor");
 			for (Course course : allCourses) {
@@ -117,14 +118,14 @@ public class SMSRunner {
 			out.println();
 			out.print("Enter Course Number: ");
 			int number = sin.nextInt();
-			Course newCourse = courseService.GetCourseById(number).get(0);
+			Course newCourse = courseService.getCourseById(number);//removed .get(0) from end
 
 			if (newCourse != null) {
-				studentService.registerStudentToCourse(currentStudent.getStudentEmail(), newCourse);
-				Student temp = studentService.getStudentByEmail(currentStudent.getStudentEmail()).get(0);
+				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse.getCId());
+				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());//removed .get(0) from end
 				
 				StudentCourseService scService = new StudentCourseService();
-				List<Course> sCourses = scService.getAllStudentCourses(temp.getStudentEmail());
+				List<Course> sCourses = scService.getAllStudentCourses(temp.getSEmail());
 				
 
 				out.println("MyClasses");

@@ -42,20 +42,23 @@ public class StudentService implements StudentDAO {
             em.getTransaction().begin();
 
             //Create a query and set the parameter
-            Query q = em.createQuery("FROM Student as s WHERE s.Email = : givenEmail");
+            Query q = em.createQuery("FROM Student as s WHERE s.sEmail = : givenEmail");
             q.setParameter("givenEmail", email);
 
             //Set result to a Student and cast it
             st = (Student) q.getSingleResult();
 
             em.getTransaction().commit();
-            em.close();
+
 
         }//end try
-        catch (IllegalArgumentException | EntityNotFoundException e) {
+        catch (IllegalArgumentException | EntityNotFoundException /*| NoResultException*/ e) {
             e.printStackTrace();
             log.error("Commit issue or no record found");
         }//end catch
+        finally {
+            em.close();
+        }
 
 
 
@@ -72,7 +75,7 @@ public class StudentService implements StudentDAO {
             em.getTransaction().begin();
 
             //Create a query
-            Query q = em.createQuery("SELECT s.Password FROM Student as s WHERE s.Email = email");
+            Query q = em.createQuery("SELECT s.Password FROM Student as s WHERE s.sEmail = email");
             q.setParameter("email", email);
 
             //Assign result to a string
@@ -128,7 +131,7 @@ public class StudentService implements StudentDAO {
                 //If the results match the given parameters, add student to the course
                 if (!sc.get(i).toString().equals(studentCourse)) {
                     //Create a query to insert a student into a course
-                    Query q2 = em.createQuery("INSERT FROM Student into StudentCourse sc WHERE email = sc.email && cId = sc.cId");
+                    Query q2 = em.createQuery("INSERT FROM Student into StudentCourse sc WHERE email = sc.sEmail && cId = sc.cId");
                     q2.setParameter("email", email);
                     q2.setParameter("cId", cId);
                 }//end if
@@ -136,6 +139,7 @@ public class StudentService implements StudentDAO {
             }//end for
 
             //Commit transaction
+            em.getTransaction().commit();
         }//end try
         catch(IllegalArgumentException | EntityNotFoundException e) {
             e.printStackTrace();
