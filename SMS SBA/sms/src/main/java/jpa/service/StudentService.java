@@ -80,7 +80,7 @@ public class StudentService implements StudentDAO {
 
             //Create a query
             Query q = em.createQuery("SELECT s.Password FROM Student as s WHERE s.sEmail = email");
-            q.setParameter("email", email);
+            q.setParameter("sEmail", email);
 
             //Assign result to a string
             String pw = (String) q.getSingleResult();
