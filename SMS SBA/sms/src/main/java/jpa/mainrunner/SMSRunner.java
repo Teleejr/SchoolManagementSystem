@@ -111,9 +111,10 @@ public class SMSRunner {
 			List<Course> allCourses = courseService.getAllCourses();
 			List<Course> studentCourses = studentService.getStudentCourse(currentStudent.getSEmail());
 			allCourses.removeAll(studentCourses);
-			out.printf("%5s%15S%15s\n", "ID", "Course", "Instructor");
+			System.out.printf("%-5s %-35s %-25s\n", "ID", "Course", "Instructor");
+
 			for (Course course : allCourses) {
-				out.println(course);
+				System.out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());
 			}
 			out.println();
 			out.print("Enter Course Number: ");

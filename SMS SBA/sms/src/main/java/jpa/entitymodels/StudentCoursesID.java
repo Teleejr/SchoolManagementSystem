@@ -18,30 +18,30 @@ public class StudentCoursesID implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String eMail;
+	private String scEmail;
 	private int courseID;
 
 	public StudentCoursesID() {
 	}
 
 	public StudentCoursesID(String email, String courseId) {
-		this.seteMail(email);
+		this.setScEmail(email);
 		this.setCourseID(courseID);
 	}
 
 	/**
-	 * @return the eMail
+	 * @return the scEmail
 	 */
-	public String geteMail() {
-		return eMail;
+	public String getScEmail() {
+		return scEmail;
 	}
 
 	/**
-	 * @param eMail
-	 *            the eMail to set
+	 * @param scEmail
+	 *            the scEmail to set
 	 */
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setScEmail(String scEmail) {
+		this.scEmail = scEmail;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class StudentCoursesID implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + courseID;
-		result = prime * result + ((eMail == null) ? 0 : eMail.hashCode());
+		result = prime * result + ((scEmail == null) ? 0 : scEmail.hashCode());
 		return result;
 	}
 
@@ -89,10 +89,10 @@ public class StudentCoursesID implements Serializable {
 		StudentCoursesID other = (StudentCoursesID) obj;
 		if (courseID != other.courseID)
 			return false;
-		if (eMail == null) {
-			if (other.eMail != null)
+		if (scEmail == null) {
+			if (other.scEmail != null)
 				return false;
-		} else if (!eMail.equals(other.eMail))
+		} else if (!scEmail.equals(other.scEmail))
 			return false;
 		return true;
 	}

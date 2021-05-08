@@ -18,9 +18,12 @@ public class StudentCourseService {
         List<Course> sc = null;
 
         try {
+
+            //Begin transaction
+            em.getTransaction().begin();
             //Create a list of students and put query results inside of it
-            Query q = em.createQuery("From StudentCourses c WHERE c.sEmail = : sEmail");
-            q.setParameter("sEmail", sEmail);
+            Query q = em.createQuery("From StudentCourses c WHERE c.scEmail = : email");
+            q.setParameter("email", sEmail);
             sc = q.getResultList();
 
             //Commit and save

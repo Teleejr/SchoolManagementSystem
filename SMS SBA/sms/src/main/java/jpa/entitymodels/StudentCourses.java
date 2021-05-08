@@ -20,23 +20,25 @@ import javax.persistence.Table;
 @Entity
 
 @Table( name="StudentCourses")
-@IdClass( StudentCoursesID.class)
+@IdClass(StudentCoursesID.class)
 @NamedQueries({
-	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email")
+	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.scEmail = :email")
 })
 public class StudentCourses {
 	@Id
-	@Column(name="student_email")
-	private String eMail;
+	@Column(name="student_cEmail")
+	private String scEmail;
 	
 	public StudentCourses() {}
 	
 	/**
-	 * @param eMail
+	 * @param scEmail
+	 * Id from Student
 	 * @param courseID
+	 * Id from Course
 	 */
-	public StudentCourses(String eMail, int courseID) {
-		this.eMail = eMail;
+	public StudentCourses(String scEmail, int courseID) {
+		this.scEmail = scEmail;
 		this.courseID = courseID;
 	}
 
@@ -45,17 +47,17 @@ public class StudentCourses {
 	private int courseID;
 
 	/**
-	 * @return the eMail
+	 * @return the cEmail
 	 */
-	public String geteMail() {
-		return eMail;
+	public String getScEmail() {
+		return scEmail;
 	}
 
 	/**
-	 * @param eMail the eMail to set
+	 * @param cEmail the cEmail to set
 	 */
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setcEmail(String cEmail) {
+		this.scEmail = cEmail;
 	}
 
 	/**
@@ -80,7 +82,7 @@ public class StudentCourses {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + courseID;
-		result = prime * result + ((eMail == null) ? 0 : eMail.hashCode());
+		result = prime * result + ((scEmail == null) ? 0 : scEmail.hashCode());
 		return result;
 	}
 
@@ -98,10 +100,10 @@ public class StudentCourses {
 		StudentCourses other = (StudentCourses) obj;
 		if (courseID != other.courseID)
 			return false;
-		if (eMail == null) {
-			if (other.eMail != null)
+		if (scEmail == null) {
+			if (other.scEmail != null)
 				return false;
-		} else if (!eMail.equals(other.eMail))
+		} else if (!scEmail.equals(other.scEmail))
 			return false;
 		return true;
 	}
@@ -109,7 +111,7 @@ public class StudentCourses {
 	@Override
 	public String toString() {
 		return "StudentCourses{" +
-				"eMail='" + eMail + '\'' +
+				"cEmail='" + scEmail + '\'' +
 				", courseID=" + courseID +
 				'}';
 	}

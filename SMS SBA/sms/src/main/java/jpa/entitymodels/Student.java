@@ -16,13 +16,13 @@ import java.util.List;
 @Entity
 public class Student {
     //Email column also the primary key
-    @Id@Column(columnDefinition = "varchar(50)", name = "Email")@NonNull
+    @Id@Column(columnDefinition = "varchar(50)", name = "Email", nullable = false)
     String sEmail;
     //Name column
-    @Column(columnDefinition = "varchar(50)", name = "Name")@NonNull
+    @Column(columnDefinition = "varchar(50)", name = "Name", nullable = false)
     String sName;
     //Password column
-    @Column(columnDefinition = "varchar(50)", name = "Password")@NonNull
+    @Column(columnDefinition = "varchar(50)", name = "Password", nullable = false)
     String sPass;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="sId")

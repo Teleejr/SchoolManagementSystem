@@ -127,7 +127,7 @@ public class StudentService implements StudentDAO {
             //Create a list of courses
             List<StudentCourses> sc = q.getResultList();
             String studentCourse = "StudentCourses{" +
-                    "eMail='" + email + '\'' +
+                    "cEmail='" + email + '\'' +
                     ", courseID=" + cId +
                     '}';
 
@@ -135,7 +135,7 @@ public class StudentService implements StudentDAO {
                 //If the results match the given parameters, add student to the course
                 if (!studentCourses.toString().equals(studentCourse)) {
                     //Create a query to insert a student into a course
-                    Query q2 = em.createQuery("INSERT FROM Student into StudentCourse sc WHERE email = sc.sEmail && cId = sc.cId");
+                    Query q2 = em.createQuery("INSERT FROM Student into StudentCourses sc WHERE email = sc.sEmail && cId = sc.cId");
                     q2.setParameter("email", email);
                     q2.setParameter("cId", cId);
 
