@@ -2,7 +2,6 @@ package jpa.service;
 
 import jpa.dao.CourseDAO;
 import jpa.entitymodels.Course;
-import jpa.entitymodels.Student;
 import jpa.mainrunner.SMSRunner;
 
 import javax.persistence.EntityManager;
@@ -24,7 +23,7 @@ public class CourseService implements CourseDAO {
             em.getTransaction().begin();
 
             //Create a list of students and put query results inside of it
-            Query q = em.createQuery("From StudentCourses c");
+            Query q = em.createQuery("From Course c");
             ac = q.getResultList();
 
             //Commit and save
@@ -53,7 +52,7 @@ public class CourseService implements CourseDAO {
             //Begin a session
             em.getTransaction().begin();
 
-            //Save
+            //Find course
             c = em.find(Course.class, cId);
 
             //Commit

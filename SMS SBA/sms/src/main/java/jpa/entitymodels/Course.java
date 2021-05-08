@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Log4j
+//@Log4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Course {

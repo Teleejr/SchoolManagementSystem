@@ -26,7 +26,7 @@ import javax.persistence.Table;
 })
 public class StudentCourses {
 	@Id
-	@Column(name="student_cEmail")
+	@Column(name="student_email")
 	private String scEmail;
 	
 	public StudentCourses() {}

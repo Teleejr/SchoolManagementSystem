@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 import jpa.entitymodels.Course;
 import jpa.entitymodels.Student;
+import jpa.entitymodels.StudentCourses;
 import jpa.service.CourseService;
 import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
@@ -70,7 +71,7 @@ public class SMSRunner {
 
 	private int menu1() {
 		sb.append("\n1.Student Login\n2. Quit Application\nPlease Enter Selection: ");
-		out.print(sb); //sb.toString()->sb. In case it doesn't work
+		out.print(sb.toString());
 		sb.delete(0, sb.length());
 
 		return sin.nextInt();
@@ -89,10 +90,17 @@ public class SMSRunner {
 		}
 
 		if (currentStudent != null && currentStudent.getSPass().equals(password)) {
-			List<Course> courses = studentService.getStudentCourse(email);
+			List<StudentCourses> courses = studentService.getStudentCourse(email);
 			out.println("MyClasses");
-			for (Course course : courses) {
-				out.println(course);
+
+			Course c = new Course();
+			CourseService cs = new CourseService();
+
+			out.printf("%-5s %-35s %-25s\n", "ID", "Name", "Instructor");
+			for (StudentCourses course : courses) {
+				c.setCId(course.getCourseID());
+				Course c1 = cs.getCourseById(c.getCId());
+				out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
 			}
 			retValue = true;
 		} else {
@@ -103,35 +111,40 @@ public class SMSRunner {
 
 	private void registerMenu() {
 		sb.append("\n1.Register a class\n2. Logout\nPlease Enter Selection: ");
-		out.print(sb); //sb.toString()->sb. In case it doesn't work
+		out.print(sb.toString());
 		sb.delete(0, sb.length());
 
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			List<Course> studentCourses = studentService.getStudentCourse(currentStudent.getSEmail());
-			allCourses.removeAll(studentCourses);
-			System.out.printf("%-5s %-35s %-25s\n", "ID", "Course", "Instructor");
+
+			out.printf("%5s %15s %15s\n", "ID", "Course", "Instructor");
 
 			for (Course course : allCourses) {
-				System.out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());
+				out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());
+
 			}
 			out.println();
 			out.print("Enter Course Number: ");
 			int number = sin.nextInt();
-			Course newCourse = courseService.getCourseById(number);//removed .get(0) from end
+			Course newCourse = courseService.getCourseById(number);
 
 			if (newCourse != null) {
 				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse.getCId());
-				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());//removed .get(0) from end
+				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());
 				
 				StudentCourseService scService = new StudentCourseService();
-				List<Course> sCourses = scService.getAllStudentCourses(temp.getSEmail());
-				
+				List<StudentCourses> sCourses = scService.getAllStudentCourses(temp.getSEmail());
 
-				out.println("MyClasses");
-				for (Course course : sCourses) {
-					out.println(course);
+				Course c = new Course();
+				CourseService cs = new CourseService();
+				System.out.printf("%-5s %-35s %-25s\n", "ID", "Course Name", "Instructor Name");
+				System.out.println("MyClasses");
+				for (StudentCourses course : sCourses) {
+					c.setCId(course.getCourseID());
+					Course c1 = cs.getCourseById(c.getCId());
+
+					System.out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
 				}
 			}
 			break;

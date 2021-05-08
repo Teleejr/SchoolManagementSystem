@@ -2,8 +2,8 @@ package jpa.entitymodels;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import lombok.extern.log4j.Log4j;
-import org.apache.log4j.Logger;
+//import lombok.extern.log4j.Log4j;
+//import org.apache.log4j.Logger;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @Getter@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Log4j
+//@Log4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Student {
@@ -25,7 +25,7 @@ public class Student {
     @Column(columnDefinition = "varchar(50)", name = "Password", nullable = false)
     String sPass;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="sId")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="student_email")
     @ToString.Exclude
     List<Course> sCourses;
 

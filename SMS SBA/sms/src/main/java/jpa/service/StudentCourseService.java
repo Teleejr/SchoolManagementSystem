@@ -12,10 +12,10 @@ import java.util.List;
 public class StudentCourseService {
 
 
-    public List<Course> getAllStudentCourses(String sEmail) {
+    public List<StudentCourses> getAllStudentCourses(String sEmail) {
         //Create entity manager
         EntityManager em = SMSRunner.emf.createEntityManager();
-        List<Course> sc = null;
+        List<StudentCourses> sc = null;
 
         try {
 
