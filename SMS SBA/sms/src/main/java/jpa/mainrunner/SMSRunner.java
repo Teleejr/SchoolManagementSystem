@@ -83,12 +83,12 @@ public class SMSRunner {
 		out.print("Enter your password: ");
 		String password = sin.next();
 
-		List<Student> students = (List<Student>) studentService.getStudentByEmail(email);
+		Student students =  studentService.getStudentByEmail(email);
 		if (students != null) {
-			currentStudent = students.get(0);
+			currentStudent = students;
 		}
 
-		if (currentStudent != null & currentStudent.getSPass().equals(password)) {
+		if (currentStudent != null && currentStudent.getSPass().equals(password)) {
 			List<Course> courses = studentService.getStudentCourse(email);
 			out.println("MyClasses");
 			for (Course course : courses) {

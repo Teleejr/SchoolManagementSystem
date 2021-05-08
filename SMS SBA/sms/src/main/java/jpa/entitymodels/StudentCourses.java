@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 
-@Table( name="courses")
+@Table( name="StudentCourses")
 @IdClass( StudentCoursesID.class)
 @NamedQueries({
 	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email")

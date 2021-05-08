@@ -20,14 +20,24 @@ public class StudentService implements StudentDAO {
         EntityManager em = SMSRunner.emf.createEntityManager();
         //Begin a session
         em.getTransaction().begin();
+        List<Student> student = null;
 
-        //Create a list of students and put query results inside of it
-        List student = em.createQuery("From Student").getResultList();
+        try {
+            //Create a list of students and put query results inside of it
+            Query q = em.createQuery("From Student s");
+            student = q.getResultList();
 
-        em.getTransaction().commit();
-        em.close();
+            //Commit and save
+            em.getTransaction().commit();
+        }
+        catch(IllegalArgumentException | EntityNotFoundException | NullPointerException e) {
+            e.printStackTrace();
+        }
+        finally {
+            em.close();
+        }
         return student;
-    }
+    }//end method
 
     @Override
     public Student getStudentByEmail(String email) {
@@ -41,26 +51,20 @@ public class StudentService implements StudentDAO {
             //Begin a session
             em.getTransaction().begin();
 
-            //Create a query and set the parameter
-            Query q = em.createQuery("FROM Student as s WHERE s.sEmail = : givenEmail");
-            q.setParameter("givenEmail", email);
+            //Save
+            st = em.find(Student.class, email);
 
-            //Set result to a Student and cast it
-            st = (Student) q.getSingleResult();
-
+            //Commit
             em.getTransaction().commit();
 
-
         }//end try
-        catch (IllegalArgumentException | EntityNotFoundException /*| NoResultException*/ e) {
+        catch (IllegalArgumentException | EntityNotFoundException  e) {
             e.printStackTrace();
             log.error("Commit issue or no record found");
         }//end catch
         finally {
             em.close();
         }
-
-
 
         return st;
     }
@@ -127,15 +131,15 @@ public class StudentService implements StudentDAO {
                     ", courseID=" + cId +
                     '}';
 
-            for (int i = 0; i < sc.size(); i++) {
+            for (StudentCourses studentCourses : sc) {
                 //If the results match the given parameters, add student to the course
-                if (!sc.get(i).toString().equals(studentCourse)) {
+                if (!studentCourses.toString().equals(studentCourse)) {
                     //Create a query to insert a student into a course
                     Query q2 = em.createQuery("INSERT FROM Student into StudentCourse sc WHERE email = sc.sEmail && cId = sc.cId");
                     q2.setParameter("email", email);
                     q2.setParameter("cId", cId);
-                }//end if
 
+                }//end if
             }//end for
 
             //Commit transaction

@@ -25,35 +25,8 @@ public class Student {
     @Column(columnDefinition = "varchar(50)", name = "Password")@NonNull
     String sPass;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="eId")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="sId")
     @ToString.Exclude
     List<Course> sCourses;
 
-//    public static Logger getLog() {
-//        return log;
-//    }
-//
-//    public String getSEmail() {
-//        return sEmail;
-//    }
-//
-//    public void setSEmail(String sEmail) {
-//        this.sEmail = sEmail;
-//    }
-//
-//    public String getSName() {
-//        return sName;
-//    }
-//
-//    public void setSName(String sName) {
-//        this.sName = sName;
-//    }
-//
-//    public String getSPass() {
-//        return sPass;
-//    }
-//
-//    public void setSPass(String sPass) {
-//        this.sPass = sPass;
-//    }
 }
