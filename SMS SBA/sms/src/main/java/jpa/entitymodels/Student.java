@@ -4,7 +4,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.List;
 
 @Getter@Setter
 @NoArgsConstructor
@@ -13,10 +16,12 @@ import javax.persistence.Entity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class Student {
-
+    @Id@Column(columnDefinition = "varchar(50)", name = "Email")@NonNull
     String sEmail;
+    @Column(columnDefinition = "varchar(50)", name = "Name")@NonNull
     String sName;
+    @Column(columnDefinition = "varchar(50)", name = "Password")@NonNull
     String sPass;
-    //List<> sCourses;
+    List<Course> sCourses;
 
 }
