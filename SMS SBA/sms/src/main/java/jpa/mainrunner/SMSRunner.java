@@ -163,11 +163,15 @@ public class SMSRunner {
 		String email = sin.next();
 		out.println("Enter password: ");
 		String password = sin.next();
-		out.println("1.Update name\n2.Update email\n3.Update password");
-		int choice = sin.nextInt();
 
-		studentService.updateStudent(email, password, choice);
-
+		//Validate student. If true, call update method and print menu
+		if(studentService.validateStudent(email, password)) {
+			studentService.updateStudent(email);
+		}//end if
+		//If validateStudent returns false, display error with verification
+		else {
+			out.println("Verification failed: Incorrect email and/or password");
+		}//end else
 	}//updateStudentsMenu
 
 	private void registerMenu() {
