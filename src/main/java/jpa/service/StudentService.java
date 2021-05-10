@@ -66,7 +66,7 @@ public class StudentService implements StudentDAO {
         return student;
     }//end method
 
-    public boolean updateStudent(String email, String password, int choice) {
+    public boolean updateStudent(String email) {
         //Create entity manager
         EntityManager em = SMSRunner.emf.createEntityManager();
         //Create Scanner
@@ -82,36 +82,18 @@ public class StudentService implements StudentDAO {
             //Initialize Scanner
             update = new Scanner(System.in);
 
-            //Validate and display Student
-            if(validateStudent(email, password)) {
-                //Create temp student object and find the student
-                temp = em.find(Student.class, email);
-                System.out.print(temp.toString());
-            }//end if
-
+            System.out.println("1.Change name\n2.Change email\n3.Change password");
+            int choice = update.nextInt();
         //Update name, email, or password based on given number
             switch (choice){
                 case 1:
-                    Student st = getStudentByEmail(email);
-                    System.out.println("Enter first name: ");
-                    String fName = update.next();
-                    System.out.println("Enter last name: ");
-                    String lName = update.next();
-                    st.setSName(fName.concat(" " + lName));
-                    em.persist(st);
-                    em.getTransaction().commit();
+                    changeName(email);
                     return true;
                 case 2:
-                    System.out.println("Enter new email: ");
-                    String mail = update.next();
-                    temp.setSEmail(mail);
-                    em.persist(temp);
+                    changeEmail(email);
                     return true;
                 case 3:
-                    System.out.println("Enter new password: ");
-                    String pass = update.next();
-                    temp.setSPass(pass);
-                    em.getTransaction().commit();
+                    //changePassword(email);
                     return true;
             }//end switch
         }//end try
@@ -127,6 +109,84 @@ public class StudentService implements StudentDAO {
 
         return true;
     }//end updateStudent
+
+    public void changeName(String email) {
+        //Create entity manager
+        EntityManager em = SMSRunner.emf.createEntityManager();
+        //Create a student using email
+        Student student = getStudentByEmail(email);
+        //Create a scanner
+        Scanner update = new Scanner(System.in);
+
+        //Get first and last name from the user, concat it and set it
+        System.out.println("Enter first name: ");
+        String fName = update.nextLine();
+        System.out.println("Enter last name: ");
+        String lName = update.nextLine();
+        String fullName = fName.concat(" " + lName);
+
+        try {
+            //Begin session
+            em.getTransaction().begin();
+
+            //Display current student info
+            System.out.println("Before update: " + student.toString());
+            //Set student name
+            student.setSName(fullName);
+            //Save to db
+            //em.persist(student);
+            em.getTransaction().commit();
+            //Display updated student info
+            System.out.println("Before update: " + student);
+
+        }
+        catch(IllegalArgumentException | EntityExistsException e) {
+            log.error("Name change failed");
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        }//end catch
+        finally {
+            em.close();
+        }//end finally
+    }//end changeName
+
+    public void changeEmail(String email) {
+        //Create entity manager
+        EntityManager em = SMSRunner.emf.createEntityManager();
+        //Create a student using email
+        Student student = getStudentByEmail(email);
+        //Create a scanner
+        Scanner update = new Scanner(System.in);
+
+        //Get first and last name from the user, concat it and set it
+        System.out.println("Enter new email: ");
+        String newEmail = update.nextLine();
+
+
+        try {
+            //Begin session
+            em.getTransaction().begin();
+
+            //Display current student info
+            System.out.println("Before update: " + student.toString());
+            //Set student email
+            student.setSEmail(newEmail);
+            //Save to db
+            em.persist(student);
+            em.getTransaction().commit();
+            //Display updated student info
+            System.out.println("Before update: " + student);
+
+        }
+        catch(IllegalArgumentException | EntityExistsException e) {
+            log.error("Email change failed");
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        }//end catch
+        finally {
+            em.close();
+        }//end finally
+    }//end changeName
 
     @Override
     public Student getStudentByEmail(String email) {
