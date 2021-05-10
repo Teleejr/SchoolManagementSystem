@@ -4,14 +4,38 @@ import jpa.dao.StudentDAO;
 import jpa.entitymodels.Student;
 import jpa.entitymodels.StudentCourses;
 import jpa.mainrunner.SMSRunner;
-//import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j;
 
 import javax.persistence.*;
 import java.util.List;
-//@Log4j
+import java.util.Scanner;
+
+@Log4j
 
 public class StudentService implements StudentDAO {
 
+
+    @Override
+    public void createStudent(Student student) {
+        //Create entity manager
+        EntityManager em = SMSRunner.emf.createEntityManager();
+        //Begin transaction
+        em.getTransaction().begin();
+
+    try {
+        //Persist to the database and commit
+        em.persist(student);
+        em.getTransaction().commit();
+    }//end try
+    catch(EntityExistsException e) {
+        log.error("This student already exists");
+        e.printStackTrace();
+        em.getTransaction().rollback();
+        }//end catch
+        finally {
+            em.close();
+        }//end finally
+    }//end createStudent
 
     @Override
     public List<Student> getAllStudents() {
@@ -22,21 +46,87 @@ public class StudentService implements StudentDAO {
         List<Student> student = null;
 
         try {
-            //Create a list of students and put query results inside of it
+            //Query the db to get all students
             Query q = em.createQuery("From Student s");
+            //Put the results in the student list
             student = q.getResultList();
 
             //Commit and save
             em.getTransaction().commit();
         }
+        //Catch exceptions, print stack, and roll back
         catch(IllegalArgumentException | EntityNotFoundException | NullPointerException e) {
             e.printStackTrace();
+            log.error("Unable to complete transaction with database");
+            em.getTransaction().rollback();
         }
         finally {
             em.close();
         }
         return student;
     }//end method
+
+    public boolean updateStudent(String email, String password, int choice) {
+        //Create entity manager
+        EntityManager em = SMSRunner.emf.createEntityManager();
+        //Create Scanner
+        Scanner update = null;
+        //Create temp Student
+        Student temp = null;
+
+
+        try {
+            //Begin transaction
+            em.getTransaction().begin();
+
+            //Initialize Scanner
+            update = new Scanner(System.in);
+
+            //Validate and display Student
+            if(validateStudent(email, password)) {
+                //Create temp student object and find the student
+                temp = em.find(Student.class, email);
+                System.out.print(temp.toString());
+            }//end if
+
+        //Update name, email, or password based on given number
+            switch (choice){
+                case 1:
+                    Student st = getStudentByEmail(email);
+                    System.out.println("Enter first name: ");
+                    String fName = update.next();
+                    System.out.println("Enter last name: ");
+                    String lName = update.next();
+                    st.setSName(fName.concat(" " + lName));
+                    em.persist(st);
+                    em.getTransaction().commit();
+                    return true;
+                case 2:
+                    System.out.println("Enter new email: ");
+                    String mail = update.next();
+                    temp.setSEmail(mail);
+                    em.persist(temp);
+                    return true;
+                case 3:
+                    System.out.println("Enter new password: ");
+                    String pass = update.next();
+                    temp.setSPass(pass);
+                    em.getTransaction().commit();
+                    return true;
+            }//end switch
+        }//end try
+        catch(IllegalArgumentException | EntityNotFoundException e) {
+            log.error("Email and password do not match");
+            e.printStackTrace();
+            em.getTransaction().rollback();
+            return false;
+        }//end catch
+        finally {
+            em.close();
+        }//end finally
+
+        return true;
+    }//end updateStudent
 
     @Override
     public Student getStudentByEmail(String email) {
