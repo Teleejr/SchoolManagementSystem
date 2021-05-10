@@ -1,0 +1,658 @@
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Located and parsed 1 persistence units; checking each
+Checking persistence-unit [name=sms, explicit-provider=org.hibernate.jpa.HibernatePersistenceProvider] against incoming persistence unit name [sms]
+Persistence-unit [sms] requested PersistenceProvider [org.hibernate.jpa.HibernatePersistenceProvider]
+PersistenceUnitInfo [
+	name: sms
+	persistence provider classname: org.hibernate.jpa.HibernatePersistenceProvider
+	classloader: null
+	excludeUnlistedClasses: false
+	JTA datasource: null
+	Non JTA datasource: null
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/C:/Users/Tom/Documents/src/SMS%20SBA/sms/target/classes
+	Shared Cache Mode: null
+	Validation Mode: null
+	Jar files URLs []
+	Managed classes names [
+		jpa.entitymodels.Student
+		jpa.entitymodels.Course]
+	Mapping files names []
+	Properties [
+		hibernate.use_sql_comments: false
+		javax.persistence.jdbc.user: root
+		hibernate.temp.use_jdbc_metadata_defaults: false
+		hibernate.dialect: org.hibernate.dialect.MariaDB103Dialect
+		javax.persistence.jdbc.url: jdbc:mariadb://localhost:3306/sms
+		javax.persistence.jdbc.driver: org.mariadb.jdbc.Driver
+		hibernate.format_sql: true
+		hibernate.generate_statistics: false
+		hibernate.hbm2ddl.auto: update
+		hibernate.show_sql: false
+		javax.persistence.jdbc.password: root]
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@c9413d8
+Adding type registration boolean -> org.hibernate.type.BooleanType@c9413d8
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@c9413d8
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2c715e84
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@21694e53
+Adding type registration yes_no -> org.hibernate.type.YesNoType@1b0a7baf
+Adding type registration byte -> org.hibernate.type.ByteType@30ed9c6c
+Adding type registration byte -> org.hibernate.type.ByteType@30ed9c6c
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@30ed9c6c
+Adding type registration character -> org.hibernate.type.CharacterType@6063d80a
+Adding type registration char -> org.hibernate.type.CharacterType@6063d80a
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6063d80a
+Adding type registration short -> org.hibernate.type.ShortType@770d0ea6
+Adding type registration short -> org.hibernate.type.ShortType@770d0ea6
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@770d0ea6
+Adding type registration integer -> org.hibernate.type.IntegerType@2f2bf0e2
+Adding type registration int -> org.hibernate.type.IntegerType@2f2bf0e2
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@2f2bf0e2
+Adding type registration long -> org.hibernate.type.LongType@363f6148
+Adding type registration long -> org.hibernate.type.LongType@363f6148
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@363f6148
+Adding type registration float -> org.hibernate.type.FloatType@29876704
+Adding type registration float -> org.hibernate.type.FloatType@29876704
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@29876704
+Adding type registration double -> org.hibernate.type.DoubleType@307765b4
+Adding type registration double -> org.hibernate.type.DoubleType@307765b4
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@307765b4
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@44a2b17b
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@44a2b17b
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@e6516e
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@e6516e
+Adding type registration string -> org.hibernate.type.StringType@2187fff7
+Adding type registration java.lang.String -> org.hibernate.type.StringType@2187fff7
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@538613b3
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@3ec11999
+Adding type registration url -> org.hibernate.type.UrlType@7df587ef
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@7df587ef
+Adding type registration Duration -> org.hibernate.type.DurationType@551a20d6
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@551a20d6
+Adding type registration Instant -> org.hibernate.type.InstantType@1b822fcc
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@1b822fcc
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7fb9f71f
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7fb9f71f
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@3af4e0bf
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@3af4e0bf
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@5f7f2382
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@5f7f2382
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@3a4b0e5d
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@3a4b0e5d
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@46ab18da
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@46ab18da
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2af616d3
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2af616d3
+Adding type registration date -> org.hibernate.type.DateType@1f130eaf
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@1f130eaf
+Adding type registration time -> org.hibernate.type.TimeType@1494b84d
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@1494b84d
+Adding type registration timestamp -> org.hibernate.type.TimestampType@2cd2c8fe
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2cd2c8fe
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2cd2c8fe
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@681aad3b
+Adding type registration calendar -> org.hibernate.type.CalendarType@56b78e55
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@56b78e55
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@56b78e55
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@22c01ab0
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@5aa0dbf4
+Adding type registration locale -> org.hibernate.type.LocaleType@74f7d1d2
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@74f7d1d2
+Adding type registration currency -> org.hibernate.type.CurrencyType@2db2dd9d
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2db2dd9d
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@37fbe4a8
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@37fbe4a8
+Adding type registration class -> org.hibernate.type.ClassType@677dbd89
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@677dbd89
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@f31c0c6
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@f31c0c6
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@2e8ab815
+Adding type registration binary -> org.hibernate.type.BinaryType@26b894bd
+Adding type registration byte[] -> org.hibernate.type.BinaryType@26b894bd
+Adding type registration [B -> org.hibernate.type.BinaryType@26b894bd
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@525d79f0
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@525d79f0
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@525d79f0
+Adding type registration row_version -> org.hibernate.type.RowVersionType@2b5cb9b2
+Adding type registration image -> org.hibernate.type.ImageType@2970a5bc
+Adding type registration characters -> org.hibernate.type.CharArrayType@2ad3a1bb
+Adding type registration char[] -> org.hibernate.type.CharArrayType@2ad3a1bb
+Adding type registration [C -> org.hibernate.type.CharArrayType@2ad3a1bb
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@2555fff0
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@2555fff0
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@2555fff0
+Adding type registration text -> org.hibernate.type.TextType@702ed190
+Adding type registration ntext -> org.hibernate.type.NTextType@70e29e14
+Adding type registration blob -> org.hibernate.type.BlobType@e3cee7b
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@e3cee7b
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@29ad44e3
+Adding type registration clob -> org.hibernate.type.ClobType@1a15b789
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1a15b789
+Adding type registration nclob -> org.hibernate.type.NClobType@344344fa
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@344344fa
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@285f09de
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@48e64352
+Adding type registration serializable -> org.hibernate.type.SerializableType@24f43aa3
+Adding type registration object -> org.hibernate.type.ObjectType@5bbc9f97
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5bbc9f97
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@425357dd
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@2102a4d5
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@210386e0
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@3d4d3fe7
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@65f87a2c
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@51684e4a
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6ce1f601
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@38875e7d
+Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@2f40a43] into BootstrapContext; was [null]
+Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@3caa4757] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@69c43e48]
+Injecting JPA temp ClassLoader [null] into BootstrapContext; was [null]
+ClassLoaderAccessImpl#injectTempClassLoader(null) [was null]
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+HHH000422: Disabling contextual LOB creation as connection was null
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@4c060c8f] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@40620d8e]
+Binding entity from annotated class: jpa.entitymodels.Student
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name Student
+Bind entity jpa.entitymodels.Student on table Student
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=Email, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [jpa.entitymodels.Student] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.Student
+MetadataSourceProcessor property sEmail with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Student:sEmail]
+building SimpleValue for sEmail
+Building property sEmail
+#makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(Email)]), sEmail, assigned, , ...)
+Binding column: Ejb3JoinColumn{logicalColumnName='student_email', referencedColumn='', mappedBy=''}
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=sCourses, insertable=true, updatable=true, unique=false}
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=null, insertable=true, updatable=true, unique=false}
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=element, insertable=true, updatable=true, unique=false}
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=sCourses_KEY, insertable=true, updatable=true, unique=false}
+Binding column: Ejb3JoinColumn{logicalColumnName='sCourses_KEY', referencedColumn='null', mappedBy='null'}
+Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+Collection role: jpa.entitymodels.Student.sCourses
+Building property sCourses
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=Name, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property sName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Student:sName]
+building SimpleValue for sName
+Building property sName
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=Password, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property sPass with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Student:sPass]
+building SimpleValue for sPass
+Building property sPass
+Binding entity from annotated class: jpa.entitymodels.Course
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name Course
+Bind entity jpa.entitymodels.Course on table Course
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=ID, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [jpa.entitymodels.Course] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.Course
+MetadataSourceProcessor property cId with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Course:cId]
+building SimpleValue for cId
+Building property cId
+#makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(ID)]), cId, identity, , ...)
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=Instructor, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property cInstructorName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Course:cInstructorName]
+building SimpleValue for cInstructorName
+Building property cInstructorName
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=Name, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property cName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.Course:cName]
+building SimpleValue for cName
+Building property cName
+Binding entity from annotated class: jpa.entitymodels.StudentCourses
+Binding named query: CoursesByStudent => Select c from StudentCourses c where c.scEmail = :email
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name StudentCourses
+Bind entity jpa.entitymodels.StudentCourses on table StudentCourses
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(StudentCourses), mappingColumn=course_id, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [jpa.entitymodels.StudentCourses] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.StudentCourses
+MetadataSourceProcessor property courseID with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.StudentCourses.id:courseID]
+building SimpleValue for courseID
+Building property courseID
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(StudentCourses), mappingColumn=student_email, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property scEmail with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.StudentCourses.id:scEmail]
+building SimpleValue for scEmail
+Building property scEmail
+#makeIdGenerator(org.hibernate.mapping.Component([org.hibernate.mapping.Property(courseID), org.hibernate.mapping.Property(scEmail)]), null, assigned, , ...)
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(StudentCourses), mappingColumn=course_id, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property courseID with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.StudentCourses._identifierMapper:courseID]
+building SimpleValue for courseID
+Building property courseID
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(StudentCourses), mappingColumn=student_email, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property scEmail with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [jpa.entitymodels.StudentCourses._identifierMapper:scEmail]
+building SimpleValue for scEmail
+Building property scEmail
+Starting fillSimpleValue for sEmail
+Starting fillSimpleValue for sName
+Starting fillSimpleValue for sPass
+Starting fillSimpleValue for cId
+Starting fillSimpleValue for cInstructorName
+Starting fillSimpleValue for cName
+Starting fillSimpleValue for courseID
+Starting fillSimpleValue for scEmail
+Starting fillSimpleValue for courseID
+Starting fillSimpleValue for scEmail
+Forcing column [email] to be non-null as it is part of the primary key for table [student]
+Forcing column [id] to be non-null as it is part of the primary key for table [course]
+Forcing column [course_id] to be non-null as it is part of the primary key for table [studentcourses]
+Forcing column [student_email] to be non-null as it is part of the primary key for table [studentcourses]
+Second pass for collection: jpa.entitymodels.Student.sCourses
+Binding a OneToMany: jpa.entitymodels.Student.sCourses through a foreign key
+Mapping collection: jpa.entitymodels.Student.sCourses -> Course
+Mapped collection key: student_email, one-to-many: jpa.entitymodels.Course
+Resolving reference to class: jpa.entitymodels.Student
+Resolving reference to class: jpa.entitymodels.Student
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: 2
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 0
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: disabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): disabled
+JDBC result set fetch size: null
+Connection release mode: AFTER_TRANSACTION
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {sun.desktop=windows, awt.toolkit=sun.awt.windows.WToolkit, hibernate.format_sql=true, java.specification.version=11, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.MariaDB103Dialect, java.class.path=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\lib\idea_rt.jar;C:\Users\Tom\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.0-M1\junit-vintage-engine-5.8.0-M1.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\plugins\junit\lib\junit-rt.jar;C:\Users\Tom\Documents\src\SMS SBA\sms\target\test-classes;C:\Users\Tom\Documents\src\SMS SBA\sms\target\classes;C:\Users\Tom\.m2\repository\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar;C:\Users\Tom\.m2\repository\org\mariadb\jdbc\mariadb-java-client\2.7.2\mariadb-java-client-2.7.2.jar;C:\Users\Tom\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Tom\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Tom\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Tom\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Tom\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Tom\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Tom\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Tom\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Tom\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Tom\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Tom\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Tom\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Tom\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Tom\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Tom\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Tom\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Tom\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Tom\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Tom\.m2\repository\org\hibernate\hibernate-entitymanager\5.4.30.Final\hibernate-entitymanager-5.4.30.Final.jar;C:\Users\Tom\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Tom\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.0-M1\junit-jupiter-5.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.0-M1\junit-jupiter-params-5.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.20\kotlin-stdlib-jdk8-1.4.20.jar;C:\Users\Tom\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.20\kotlin-stdlib-1.4.20.jar;C:\Users\Tom\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.20\kotlin-stdlib-common-1.4.20.jar;C:\Users\Tom\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Tom\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.20\kotlin-stdlib-jdk7-1.4.20.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-runner\1.8.0-M1\junit-platform-runner-1.8.0-M1.jar;C:\Users\Tom\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\Tom\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Tom\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.0-M1\junit-platform-launcher-1.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-suite-api\1.8.0-M1\junit-platform-suite-api-1.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.8.0-M1\junit-platform-suite-commons-1.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\3.0.0-M5\maven-surefire-plugin-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\maven-surefire-common\3.0.0-M5\maven-surefire-common-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-api\3.0.0-M5\surefire-api-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.0.0-M5\surefire-logger-api-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-extensions-api\3.0.0-M5\surefire-extensions-api-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-booter\3.0.0-M5\surefire-booter-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.0.0-M5\surefire-extensions-spi-3.0.0-M5.jar;C:\Users\Tom\.m2\repository\org\apache\maven\maven-toolchain\3.0-alpha-2\maven-toolchain-3.0-alpha-2.jar;C:\Users\Tom\.m2\repository\org\apache\maven\shared\maven-artifact-transfer\0.11.0\maven-artifact-transfer-0.11.0.jar;C:\Users\Tom\.m2\repository\org\apache\maven\shared\maven-common-artifact-filters\3.0.1\maven-common-artifact-filters-3.0.1.jar;C:\Users\Tom\.m2\repository\org\apache\maven\maven-model\3.0\maven-model-3.0.jar;C:\Users\Tom\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Tom\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Tom\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Tom\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Tom\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Tom\.m2\repository\org\apache\maven\shared\maven-shared-utils\3.1.0\maven-shared-utils-3.1.0.jar;C:\Users\Tom\.m2\repository\commons-io\commons-io\2.5\commons-io-2.5.jar;C:\Users\Tom\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Tom\.m2\repository\org\codehaus\plexus\plexus-java\1.0.5\plexus-java-1.0.5.jar;C:\Users\Tom\.m2\repository\org\ow2\asm\asm\7.2\asm-7.2.jar;C:\Users\Tom\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M9\qdox-2.0-M9.jar;C:\Users\Tom\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.0.0-M4\surefire-shared-utils-3.0.0-M4.jar;C:\Users\Tom\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\Tom\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Tom\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar, java.vm.vendor=Amazon.com Inc., sun.arch.data.model=64, idea.test.cyclic.buffer.size=1048576, user.variant=, java.vendor.url=https://aws.amazon.com/corretto/, user.timezone=America/New_York, javax.persistence.jdbc.url=jdbc:mariadb://localhost:3306/sms, javax.persistence.jdbc.user=****, os.name=Windows 10, java.vm.specification.version=11, hibernate.generate_statistics=false, sun.java.launcher=SUN_STANDARD, user.country=US, local.setting.IS_JTA_TXN_COORD=false, sun.boot.library.path=C:\Users\Tom\.jdks\corretto-11.0.11\bin, sun.java.command=com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 jpa.service.StudentServiceTest,getStudentByEmailTest(org.junit.jupiter.params.aggregator.ArgumentsAccessor), hibernate.use_sql_comments=false, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Tom, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-04-20, java.home=C:\Users\Tom\.jdks\corretto-11.0.11, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, hibernate.transaction.coordinator_class=class org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, javax.persistence.jdbc.driver=org.mariadb.jdbc.Driver, hibernate.hbm2ddl.auto=update, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=11.0.11+9-LTS, user.name=Tom, path.separator=;, hibernate.connection.username=****, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mariadb://localhost:3306/sms, file.encoding=UTF-8, hibernate.ejb.persistenceUnitName=sms, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.show_sql=false, java.vendor.version=Corretto-11.0.11.9.1, hibernate.connection.driver_class=org.mariadb.jdbc.Driver, java.vendor.url.bug=https://github.com/corretto/corretto-11/issues/, java.io.tmpdir=C:\Users\Tom\AppData\Local\Temp\, java.version=11.0.11, user.dir=C:\Users\Tom\Documents\src\SMS SBA\sms, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.awt.windows.WPrinterJob, hibernate.connection.password=****, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.registry.StandardServiceRegistryBuilder$1@38320e34, java.library.path=C:\Users\Tom\.jdks\corretto-11.0.11\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Tom\AppData\Local\Microsoft\WindowsApps;C:\Users\Tom\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Tom\AppData\Local\GitHubDesktop\bin;., java.vendor=Amazon.com Inc., java.vm.info=mixed mode, hibernate.temp.use_jdbc_metadata_defaults=false, java.vm.version=11.0.11+9-LTS, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, javax.persistence.jdbc.password=****, java.class.version=55.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@4c060c8f] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@6d469831]
+Not known whether passed class name [jpa.entitymodels.Student] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.Student
+Not known whether passed class name [jpa.entitymodels.Course] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.Course
+Not known whether passed class name [jpa.entitymodels.StudentCourses] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : jpa.entitymodels.StudentCourses
+Static SQL for collection: jpa.entitymodels.Student.sCourses
+ Row insert: update Course set student_email=? where ID=?
+ Row update: update Course set  where ID=?
+ Row delete: update Course set student_email=null where student_email=? and ID=?
+ One-shot delete: update Course set student_email=null where student_email=?
+Static SQL for entity: jpa.entitymodels.Student
+ Version select: select Email from Student where Email =?
+ Snapshot select: select student_.Email, student_.Name as name2_1_, student_.Password as password3_1_ from Student student_ where student_.Email=?
+ Insert 0: insert into Student (Name, Password, Email) values (?, ?, ?)
+ Update 0: update Student set Name=?, Password=? where Email=?
+ Delete 0: delete from Student where Email=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@285c6918]
+Visiting attribute path : sCourses
+Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@48f4713c]
+Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@767f6ee7]
+Visiting attribute path : sName
+Visiting attribute path : sPass
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=jpa.entitymodels.Student)
+    - Returns
+       - EntityReturnImpl(entity=jpa.entitymodels.Student, querySpaceUid=<gen:0>, path=jpa.entitymodels.Student)
+          - CollectionAttributeFetchImpl(collection=jpa.entitymodels.Student.sCourses, querySpaceUid=<gen:1>, path=jpa.entitymodels.Student.sCourses)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=jpa.entitymodels.Course, querySpaceUid=<gen:2>, path=jpa.entitymodels.Student.sCourses.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=jpa.entitymodels.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {email1_1_0_}
+
+Static select for entity jpa.entitymodels.Student [NONE]: select student0_.Email as email1_1_0_, student0_.Name as name2_1_0_, student0_.Password as password3_1_0_ from Student student0_ where student0_.Email=?
+Static SQL for entity: jpa.entitymodels.Course
+ Version select: select ID from Course where ID =?
+ Snapshot select: select course_.ID, course_.Instructor as instruct2_0_, course_.Name as name3_0_ from Course course_ where course_.ID=?
+ Insert 0: insert into Course (Instructor, Name, ID) values (?, ?, ?)
+ Update 0: update Course set Instructor=?, Name=? where ID=?
+ Delete 0: delete from Course where ID=?
+ Identity insert: insert into Course (Instructor, Name) values (?, ?)
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4c361f63]
+Visiting attribute path : cInstructorName
+Visiting attribute path : cName
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=jpa.entitymodels.Course)
+    - Returns
+       - EntityReturnImpl(entity=jpa.entitymodels.Course, querySpaceUid=<gen:0>, path=jpa.entitymodels.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=jpa.entitymodels.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+Static select for entity jpa.entitymodels.Course [NONE]: select course0_.ID as id1_0_0_, course0_.Instructor as instruct2_0_0_, course0_.Name as name3_0_0_ from Course course0_ where course0_.ID=?
+Static SQL for entity: jpa.entitymodels.StudentCourses
+ Version select: select course_id, student_email from StudentCourses where course_id =? and student_email =?
+ Snapshot select: select studentcou_.course_id, studentcou_.student_email from StudentCourses studentcou_ where studentcou_.course_id=? and studentcou_.student_email=?
+ Insert 0: insert into StudentCourses (course_id, student_email) values (?, ?)
+ Update 0: null
+ Delete 0: delete from StudentCourses where course_id=? and student_email=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4eb166a1]
+Adding QuerySpace : uid = <gen:0>-id -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@526b2f3e]
+Visiting attribute path : courseID
+Visiting attribute path : scEmail
+Visiting attribute path : 
+Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CompositeQuerySpaceImpl@4d68b571]
+Visiting attribute path : courseID
+Visiting attribute path : scEmail
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=jpa.entitymodels.StudentCourses)
+    - Returns
+       - EntityReturnImpl(entity=jpa.entitymodels.StudentCourses, querySpaceUid=<gen:0>, path=jpa.entitymodels.StudentCourses)
+          - CompositeAttributeFetchImpl(composite=jpa.entitymodels.StudentCourses, querySpaceUid=<gen:1>, path=jpa.entitymodels.StudentCourses)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=jpa.entitymodels.StudentCourses)
+          - SQL table alias mapping - studentcou0_
+          - alias suffix - 0_
+          - suffixed key columns - {course_i1_2_0_, student_2_2_0_}
+          - JOIN (JoinDefinedByMetadata(id)) : <gen:0> -> <gen:0>-id
+             - CompositeQuerySpaceImpl(uid=<gen:0>-id)
+                - SQL table alias mapping - studentcou0_
+          - JOIN (JoinDefinedByMetadata(_identifierMapper)) : <gen:0> -> <gen:1>
+             - CompositeQuerySpaceImpl(uid=<gen:1>)
+                - SQL table alias mapping - studentcou0_
+
+Static select for entity jpa.entitymodels.StudentCourses [NONE]: select studentcou0_.course_id as course_i1_2_0_, studentcou0_.student_email as student_2_2_0_ from StudentCourses studentcou0_ where studentcou0_.course_id=? and studentcou0_.student_email=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@43984213]
+Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2ff7a73]
+Visiting attribute path : cInstructorName
+Visiting attribute path : cName
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(collection=jpa.entitymodels.Student.sCourses)
+    - Returns
+       - CollectionReturnImpl(collection=jpa.entitymodels.Student.sCourses, querySpaceUid=<gen:0>, path=[jpa.entitymodels.Student.sCourses])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=jpa.entitymodels.Course, querySpaceUid=<gen:1>, path=[jpa.entitymodels.Student.sCourses].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=jpa.entitymodels.Student.sCourses)
+          - SQL table alias mapping - scourses0_
+          - alias suffix - 0_
+          - suffixed key columns - {student_4_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_0_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=jpa.entitymodels.Course)
+                - SQL table alias mapping - scourses0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+Static select for collection jpa.entitymodels.Student.sCourses: select scourses0_.student_email as student_4_0_0_, scourses0_.ID as id1_0_0_, scourses0_.ID as id1_0_1_, scourses0_.Instructor as instruct2_0_1_, scourses0_.Name as name3_0_1_ from Course scourses0_ where scourses0_.student_email=?
+HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/sms]
+HHH10001001: Connection properties: {password=root, user=root}
+HHH10001003: Autocommit mode: false
+Initializing Connection pool with 1 Connections
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c8dbf56] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+No alter strings for table : Course
+No alter strings for table : Student
+No alter strings for table : StudentCourses
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 1 named HQL queries
+Checking named query: CoursesByStudent
+Statistics initialized [enabled=false]
+QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@46dcbeab
+parse() - HQL: Select c from jpa.entitymodels.StudentCourses c where c.scEmail = :email
+throwQueryException() : no errors
+--- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[IDENT] Node: 'jpa'
+    |  |     |  |  \-[IDENT] Node: 'entitymodels'
+    |  |     |  \-[IDENT] Node: 'StudentCourses'
+    |  |     \-[ALIAS] Node: 'c'
+    |  \-[SELECT] Node: 'Select'
+    |     \-[IDENT] Node: 'c'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'c'
+          |  \-[IDENT] Node: 'scEmail'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'email'
+
+select << begin [level=1, statement=select]
+FromClause{level=1} : jpa.entitymodels.StudentCourses (c) -> studentcou0_
+Resolved : c -> studentcou0_.course_id, studentcou0_.student_email
+Resolved : c -> (studentcou0_.course_id, studentcou0_.student_email)
+getDataType() : scEmail -> org.hibernate.type.StringType@2187fff7
+Resolved : c.scEmail -> studentcou0_.student_email
+select : finishing up [level=1, statement=select]
+processQuery() :  ( SELECT ( {select clause} studentcou0_.course_id, studentcou0_.student_email ) ( FromClause{level=1} StudentCourses studentcou0_ ) ( where ( = ( studentcou0_.student_email (studentcou0_.course_id, studentcou0_.student_email) scEmail ) ? ) ) )
+Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity StudentCourses): [StudentCourses]
+    |  \-IdentNode
+    |    persister: SingleTableEntityPersister(jpa.entitymodels.StudentCourses)
+    |    originalText: c
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(jpa.entitymodels.StudentCourses)
+          | path: c.scEmail
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(jpa.entitymodels.StudentCourses)
+          |  | originalText: c
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: scEmail
+          \-ParameterNode
+
+Using FROM fragment [StudentCourses studentcou0_]
+select >> end [level=1, statement=select]
+--- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (StudentCourses)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  \-[ALIAS_REF] IdentNode: 'studentcou0_.course_id as course_i1_2_, studentcou0_.student_email as student_2_2_' {alias=c, className=jpa.entitymodels.StudentCourses, tableAlias=studentcou0_}
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[c], fromElementByTableAlias=[studentcou0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'StudentCourses studentcou0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=c,role=null,tableName=StudentCourses,tableAlias=studentcou0_,origin=null,columns={,className=jpa.entitymodels.StudentCourses}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'studentcou0_.student_email' {propertyName=scEmail,dereferenceType=PRIMITIVE,getPropertyPath=scEmail,path=c.scEmail,tableAlias=studentcou0_,className=jpa.entitymodels.StudentCourses,classAlias=c}
+          |  +-[ALIAS_REF] IdentNode: '(studentcou0_.course_id, studentcou0_.student_email)' {alias=c, className=jpa.entitymodels.StudentCourses, tableAlias=studentcou0_}
+          |  \-[IDENT] IdentNode: 'scEmail' {originalText=scEmail}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=email, expectedType=org.hibernate.type.StringType@2187fff7}
+
+throwQueryException() : no errors
+HQL: Select c from jpa.entitymodels.StudentCourses c where c.scEmail = :email
+SQL: select studentcou0_.course_id as course_i1_2_, studentcou0_.student_email as student_2_2_ from StudentCourses studentcou0_ where studentcou0_.student_email=?
+throwQueryException() : no errors
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@4e3e11b9
+Registering SessionFactory: 5016d91f-93ca-4be5-8ff9-9642d8a85800 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.Email as email1_1_0_,
+        student0_.Name as name2_1_0_,
+        student0_.Password as password3_1_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.Email=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Student#cjaulme9@bing.com]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = Cahra Jaulme
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = FnVklVgC6r6
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#cjaulme9@bing.com]
+Done entity load : jpa.entitymodels.Student#cjaulme9@bing.com
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#cjaulme9@bing.com], was: [jpa.entitymodels.Student.sCourses#cjaulme9@bing.com] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=cjaulme9@bing.com, sName=Cahra Jaulme, sCourses=<uninitialized>, sPass=FnVklVgC6r6}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.Email as email1_1_0_,
+        student0_.Name as name2_1_0_,
+        student0_.Password as password3_1_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.Email=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Student#htaffley6@columbia.edu]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = Holmes Taffley
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = xowtOQ
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#htaffley6@columbia.edu]
+Done entity load : jpa.entitymodels.Student#htaffley6@columbia.edu
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#htaffley6@columbia.edu], was: [jpa.entitymodels.Student.sCourses#htaffley6@columbia.edu] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=htaffley6@columbia.edu, sName=Holmes Taffley, sCourses=<uninitialized>, sPass=xowtOQ}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.Email as email1_1_0_,
+        student0_.Name as name2_1_0_,
+        student0_.Password as password3_1_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.Email=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Student#cstartin3@flickr.com]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = Clem Startin
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = XYHzJ1S
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#cstartin3@flickr.com]
+Done entity load : jpa.entitymodels.Student#cstartin3@flickr.com
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#cstartin3@flickr.com], was: [jpa.entitymodels.Student.sCourses#cstartin3@flickr.com] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=cstartin3@flickr.com, sName=Clem Startin, sCourses=<uninitialized>, sPass=XYHzJ1S}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.Email as email1_1_0_,
+        student0_.Name as name2_1_0_,
+        student0_.Password as password3_1_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.Email=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Student#qllorens2@howstuffworks.com]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = Quillan Llorens
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = W6rJuxd
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#qllorens2@howstuffworks.com]
+Done entity load : jpa.entitymodels.Student#qllorens2@howstuffworks.com
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#qllorens2@howstuffworks.com], was: [jpa.entitymodels.Student.sCourses#qllorens2@howstuffworks.com] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=qllorens2@howstuffworks.com, sName=Quillan Llorens, sCourses=<uninitialized>, sPass=W6rJuxd}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
