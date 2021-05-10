@@ -12,9 +12,13 @@ import java.util.Scanner;
 
 import jpa.entitymodels.Course;
 import jpa.entitymodels.Student;
+import jpa.entitymodels.StudentCourses;
 import jpa.service.CourseService;
 import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
+import jpa.util.SmsUtil;
+
+import javax.persistence.EntityManagerFactory;
 
 /**1
  * 
@@ -22,6 +26,7 @@ import jpa.service.StudentService;
  *
  */
 public class SMSRunner {
+	public static EntityManagerFactory emf = SmsUtil.getEntityManagerFactory();
 
 	private Scanner sin;
 	private StringBuilder sb;
@@ -39,6 +44,7 @@ public class SMSRunner {
 
 	/**
 	 * @param args
+	 * main runner
 	 */
 	public static void main(String[] args) {
 
@@ -55,6 +61,16 @@ public class SMSRunner {
 			}
 			break;
 		case 2:
+			displayStudents(studentService.getAllStudents());
+			break;
+		case 3:
+			createStudentMenu();
+			break;
+		case 5:
+			//doesn't work in switch statement
+			updateStudentsMenu();
+			break;
+		case 4:
 			out.println("Goodbye!");
 			break;
 
@@ -64,7 +80,7 @@ public class SMSRunner {
 	}
 
 	private int menu1() {
-		sb.append("\n1.Student Login\n2. Quit Application\nPlease Enter Selection: ");
+		sb.append("\n1.Student Login\n2.View all Students\n3.Create Student\n4.Quit Application\nPlease Enter Selection: ");
 		out.print(sb.toString());
 		sb.delete(0, sb.length());
 
@@ -78,16 +94,23 @@ public class SMSRunner {
 		out.print("Enter your password: ");
 		String password = sin.next();
 
-		List<Student> students = studentService.getStudentByEmail(email);
+		Student students =  studentService.getStudentByEmail(email);
 		if (students != null) {
-			currentStudent = students.get(0);
+			currentStudent = students;
 		}
 
-		if (currentStudent != null & currentStudent.getStudentPassword().equals(password)) {
-			List<Course> courses = studentService.getStudentCourses(email);
+		if (currentStudent != null && currentStudent.getSPass().equals(password)) {
+			List<StudentCourses> courses = studentService.getStudentCourse(email);
 			out.println("MyClasses");
-			for (Course course : courses) {
-				out.println(course);
+
+			Course c = new Course();
+			CourseService cs = new CourseService();
+
+			out.printf("%-5s %-35s %-25s\n", "ID", "Name", "Instructor");
+			for (StudentCourses course : courses) {
+				c.setCId(course.getCourseID());
+				Course c1 = cs.getCourseById(c.getCId());
+				out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
 			}
 			retValue = true;
 		} else {
@@ -95,6 +118,57 @@ public class SMSRunner {
 		}
 		return retValue;
 	}
+
+	//Added createStudentMenu
+	private void createStudentMenu() {
+		//Get name, email, and password for the new student
+		out.print("Enter name: ");
+		String name = sin.next();
+		out.print("Enter email: ");
+		String email = sin.next();
+		out.print("Enter password: ");
+		String password = sin.next();
+
+		//Create temp student object
+		Student temp = new Student(name, email, password);
+
+		//Create student
+		studentService.createStudent(temp);
+		//Display new student
+		out.printf("You entered: %5s %15s %15s\n", temp.getSName(), temp.getSEmail(), temp.getSPass());
+		//Get student by email
+		currentStudent = studentService.getStudentByEmail(temp.getSEmail());
+
+		//Confirm currentStudent is not null, else say student was not added to the system
+		if(currentStudent != null) {
+			out.printf("System received: %5s %15s %15s\n", currentStudent.getSName(), currentStudent.getSEmail(), currentStudent.getSPass());
+		}//end if
+		else {
+			out.println("Student was not added to the system");
+		}//end else
+
+	}//end createStudentMenu
+
+	//Displays all students in the system
+	private void displayStudents(List<Student> student) {
+
+		for(Student st : student)
+			out.println(st);
+
+	}//end displayStudents
+
+	private void updateStudentsMenu() {
+		//Get email and password, then call updateStudent
+		out.println("Enter email: ");
+		String email = sin.next();
+		out.println("Enter password: ");
+		String password = sin.next();
+		out.println("1.Update name\n2.Update email\n3.Update password");
+		int choice = sin.nextInt();
+
+		studentService.updateStudent(email, password, choice);
+
+	}//updateStudentsMenu
 
 	private void registerMenu() {
 		sb.append("\n1.Register a class\n2. Logout\nPlease Enter Selection: ");
@@ -104,29 +178,35 @@ public class SMSRunner {
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getStudentEmail());
-			allCourses.removeAll(studentCourses);
-			out.printf("%5s%15S%15s\n", "ID", "Course", "Instructor");
+
+			out.printf("%5s %15s %15s\n", "ID", "Course", "Instructor");
+
 			for (Course course : allCourses) {
-				out.println(course);
+				out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());
+
 			}
 			out.println();
 			out.print("Enter Course Number: ");
 			int number = sin.nextInt();
-			Course newCourse = courseService.GetCourseById(number).get(0);
+			Course newCourse = courseService.getCourseById(number);
 
 			if (newCourse != null) {
-				studentService.registerStudentToCourse(currentStudent.getStudentEmail(), newCourse);
-				Student temp = studentService.getStudentByEmail(currentStudent.getStudentEmail()).get(0);
+				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse.getCId());
+				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());
 				
 				StudentCourseService scService = new StudentCourseService();
-				List<Course> sCourses = scService.getAllStudentCourses(temp.getStudentEmail());
-				
+				List<StudentCourses> sCourses = scService.getAllStudentCourses(temp.getSEmail());
 
-				out.println("MyClasses");
-				for (Course course : sCourses) {
-					out.println(course);
-				}
+					Course c = new Course();
+					CourseService cs = new CourseService();
+					System.out.printf("%-5s %-35s %-25s\n", "ID", "Course Name", "Instructor Name");
+					System.out.println("MyClasses");
+					for (StudentCourses course : sCourses) {
+						c.setCId(course.getCourseID());
+						Course c1 = cs.getCourseById(c.getCId());
+
+						System.out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
+					}
 			}
 			break;
 		case 2:

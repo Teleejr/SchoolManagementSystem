@@ -14,11 +14,14 @@ import javax.persistence.*;
 @Entity
 public class Course {
 
+    //Primary Key: ID column
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "INT(11) UNSIGNED", name = "ID")@NonNull
+    @Column(columnDefinition = "INT(11) UNSIGNED", name = "ID", nullable = false)
     Integer cId;
-    @Column(columnDefinition = "varchar(50)", name = "Name")@NonNull
+    //Name column
+    @Column(columnDefinition = "varchar(50)", name = "Name", nullable = false)
     String cName;
-    @Column(columnDefinition = "varchar(50)", name = "Instructor")@NonNull
+    //Instructor Name column
+    @Column(columnDefinition = "varchar(50)", name = "Instructor", nullable = false)
     String cInstructorName;
 }
