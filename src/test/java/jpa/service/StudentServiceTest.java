@@ -58,4 +58,4 @@ class StudentServiceTest {
         Assertions.assertEquals(expected.getSName(), actual.getSName(),"Expected: true");
         Assertions.assertEquals(expected.getSPass(), actual.getSPass(),"Expected: true");
     }//end getStudentByEmailTestF
-}
+}//end StudentServiceTest
